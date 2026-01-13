@@ -13,6 +13,9 @@
 
 #include <QMainWindow>
 
+#include "logindialog.h"
+#include "registerdialog.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -27,7 +30,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void SlotSwitch();
+
 private:
     Ui::MainWindow *ui;
+    LoginDialog * _login_dlg;
+    RegisterDialog * _register_dlg;
 };
 #endif // MAINWINDOW_H

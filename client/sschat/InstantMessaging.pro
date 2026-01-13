@@ -11,15 +11,18 @@ CONFIG += c++17
 SOURCES += \
     logindialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    registerdialog.cpp
 
 HEADERS += \
     logindialog.h \
-    mainwindow.h
+    mainwindow.h \
+    registerdialog.h
 
 FORMS += \
     logindialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    registerdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -30,3 +33,6 @@ DESTDIR = ./bin
 
 RESOURCES += \
     rc.qrc
+
+DISTFILES += \
+    style/stylesheet.qss
