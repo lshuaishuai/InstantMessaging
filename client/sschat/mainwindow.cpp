@@ -7,29 +7,32 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    _login_dlg = new LoginDialog();
+    _login_dlg = new LoginDialog(this);
     setCentralWidget(_login_dlg);
-    _login_dlg->show();
+    // _login_dlg->show();
 
     // create and register connect
     connect(_login_dlg, &LoginDialog::switchRegister, this, &MainWindow::SlotSwitch);
-    _register_dlg = new RegisterDialog();
+    _register_dlg = new RegisterDialog(this);
 
+    _login_dlg->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    _register_dlg->setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    _register_dlg->hide();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    if(_login_dlg)
-    {
-        delete _login_dlg;
-        _login_dlg = nullptr;
-    }
-    if(_register_dlg)
-    {
-        delete _register_dlg;
-        _register_dlg = nullptr;
-    }
+    // if(_login_dlg)
+    // {
+    //     delete _login_dlg;
+    //     _login_dlg = nullptr;
+    // }
+    // if(_register_dlg)
+    // {
+    //     delete _register_dlg;
+    //     _register_dlg = nullptr;
+    // }
 }
 
 void MainWindow::SlotSwitch()
