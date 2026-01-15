@@ -14,6 +14,7 @@ private:
 	void CheckDeadline();
 	void WriteResponse();
 	void HandleReq();
+	void PreParseGetParam();
 
 private:
 	tcp::socket _socket;
@@ -24,5 +25,7 @@ private:
 		_socket.get_executor(), 
 		std::chrono::seconds(60) 
 	};
+	std::string _get_url;
+	std::unordered_map<std::string, std::string> _get_params;
 
 };
