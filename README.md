@@ -5,4 +5,5 @@
 4. protobuf
 5. boost library
 6. tcp/http
-7. 未来考虑引入高性能的日志系统
+7. JSO
+8. 未来考虑引入高性能的日志系统
