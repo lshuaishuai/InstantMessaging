@@ -46,6 +46,10 @@ void RegisterDialog::on_send_code_clicked()
     if(match)
     {
         // send http varify code
+        QJsonObject json_obj;
+        json_obj["email"] = email;
+        HttpMgr::GetInstance()->PostHttpReq(QUrl(gate_url_prefix + "/get_verifycode"),
+                                            json_obj, ReqId::ID_GET_VARIFY_CODE, Modules::REGISTERMOD);
     }
     else
     {
